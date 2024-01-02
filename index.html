@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasean</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="https://media.discordapp.net/attachments/821655672536956942/1160247599757017120/image_3.png?ex=6533f7c8&is=652182c8&hm=19ea0cc3ca9834df934a0995f01ab47d401a15501dbcb78b9d6ee9d89812c528&=&width=266&height=110"
+                alt="..." height="36">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto mx-auto"> <!-- Add mx-auto class for horizontal centering -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://drive.google.com/file/d/1tRQFOxwxrTUpqe-wbAu0689-bYys2RPk/view?usp=drive_link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://earth.jpl.nasa.gov/emit/science/objectives/">Objectives</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="https://lpdaac.usgs.gov/documents/1696/EMIT_GHG_ATBD_V1.pdf">Greenhouse</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Rest of your content here -->
+    <section class="hero">
+        <h1 class="heroheader">EMIT</h1>
+        <p class="heroparagraph">Earth Surface <br> Mineral Dust <br>Source Investigation</p>
+        <a href="https://earth.jpl.nasa.gov/emit/mission/about/" class="cta-button">ABOUT THE EMIT</a>
+    </section>
+
+
+
+    <section class="teams">
+        <div class="teams-items">
+            <h4 class="teams-header">What is EMIT ?</h4>
+            <div class="teams-img">
+                <img src="https://media.discordapp.net/attachments/1158035690819420332/1160462055833354250/emit_collecting_data_print.png?ex=6534bf82&is=65224a82&hm=52bcf87bf6df874bb10811c9632884bdc32043a6390b2c7f16191481560c9e7c&=&width=1177&height=662"
+                    alc="">
+            </div>
+            <p class="teams-p">
+                A NASA instrument in orbit around the Earth and designed to study airborne particulate matter
+                and its impact on global climate change has detected a large source of methane gas emissions.
+                The EMIT device can pinpoint the location. Up to 50 large methane releases occur within a matter of
+                months.
+            </p>
+            <a href="https://earth.jpl.nasa.gov/emit/data/data-portal/coverage-and-forecasts/" class="teams-buttom">See
+                more</a>
+        </div>
+        <div class="teams-items">
+            <h4 class="teams-header">EMIT Detection</h4>
+            <div class="teams-img">
+                <img src="https://imgsrv2.voi.id/UpbZ-Bdcja8yF8hO5fTZ1-ovnuzvz-U-XZxGg0dcFt4/auto/1200/675/sm/1/bG9jYWw6Ly8vcHVibGlzaGVycy8yMTkwODgvMjAyMjEwMTcxMjI1LW1haW4uY3JvcHBlZF8xNjY1OTg0Mzg1LmpwZWc.jpg"
+                    alc="">
+            </div>
+            <p class="teams-p">EMIT is designed to be able to determine the unique chemical composition of elements
+                on
+                Earth, and the fact that it can also detect methane is a happy coincidence. Scientists at NASA's Jet
+                Propulsion Laboratory (JPL) explain that methane gas absorbs infrared radiation in a unique way that
+                makes it detectable by EMIT devices. Which orbits the Earth with the International Space Station
+                every
+                90 minutes at an altitude of approximately 420 kilometers, allowing the machine to scan various
+                areas.
+                You can go all over the world and go deep into some spots that are as small as a football field.
+            </p>
+            <a href="https://earth.jpl.nasa.gov/emit/resources/101/emit-first-data/" class="teams-buttom">See
+                more</a>
+        </div>
+        <div class="teams-items">
+            <h4 class="teams-header">How Methane gas affect the world</h4>
+            <div class="teams-img">
+                <img src="https://s1.cdn.autoevolution.com/images/news/gallery/nasa-satellites-study-methane-super-emitters-from-space-make-lifted-trucks-look-green_1.jpg"
+                    alc="">
+            </div>
+            <p class="teams-p">
+                Reining in methane emissions is key to limiting global warming. This exciting new development will
+                not
+                only help researchers better pinpoint where methane leaks are coming from, but also provide insight
+                on
+                how they can be addressed quickly.
+            </p>
+            <a href="https://earth.jpl.nasa.gov/emit/news/23/methane-super-emitters-mapped-by-nasas-new-earth-space-mission/"
+                class="teams-buttom">See more</a>
+        </div>
+    </section>
+
+    <section>
+        <h1 class="map-header">Methane Emissions Map</h1>
+        <!-- Create a div to hold the map -->
+        <div id="map" style="height: 500px;"></div>
+
+        <script>
+            // Create a Leaflet map centered at a specific latitude and longitude
+            var map = L.map('map').setView([51.505, -0.09], 13);
+
+            // Add a base layer (e.g., OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Load GeoJSON data ("Methane Metadata.json") and add it to the map
+            fetch('Methane_Metadata.json')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    L.geoJSON(data).addTo(map);
+                })
+                .catch(function (error) {
+                    console.error('Error loading GeoJSON:', error);
+                });
+        </script>
+    </section>
+
+    <div class="map-container">
+        <section>
+            <h1>How can we manage or reduce the amount of methane gas?</h1>
+            <h2>In dealing with methane gas initially</h2>
+            <p>Upgrade infrastructure to prevent and contain or seal methane leaks from sources that use fossil fuels,
+                oil or gas, such as coal mines. Turn to using more renewable energy. Reduce the amount of organic waste
+                in the garbage mountain. Or reduce the amount of food waste so that garbage dump sites can reduce
+                methane gas by 35%. Provide a better wastewater treatment system. For those who import natural gas Such
+                as in the case of the European Union. A procedure can be established to examine measures to manage,
+                monitor and control the release of methane into the atmosphere, etc.</p>
+            <img src="https://rmi.org/wp-content/uploads/2022/07/exhibit-7-methane-report.svg">
+        </section>
+    </div>
+
+    <div class="map-container">
+        <section>
+            <h1>So how can we use the information about methane gas and the amount of Dust quantity collected by Emit?
+            </h1>
+            <section class="teams2">
+                <div class="teams-items2">
+                    <div class="teams-img2">
+                        <img src="https://www.robovent.com/wp-content/uploads/2021/07/mining-dust.webp" alc="">
+                    </div>
+                    <a href="DustQuantity.html" class="teams-buttom2">DUST QUANTITY</a>
+                </div>
+                <div class="teams-items2">
+                    <div class="teams-img2">
+                        <img src="https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/201912/MIT-Methane-Leakage_0.jpg?itok=_g4qiRaW"
+                            alc="">
+                    </div>
+                    <a href="MethaneGas.html" class="teams-buttom">METHANE GAS</a>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Nasean. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

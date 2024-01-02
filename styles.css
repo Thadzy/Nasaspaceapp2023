@@ -1,0 +1,368 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* Style the transparent navbar */
+/* Transparent Navbar */
+.navbar {
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* To make sure it's above other content */
+}
+
+/* Center the content within the container */
+
+
+/* Style the logo */
+.navbar h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    /* Remove default margin */
+}
+
+/* Style the navigation menu */
+.navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    display: inline;
+}
+
+.navbar nav ul li {
+    display: inline;
+
+}
+
+.navbar nav ul li:last-child {
+    margin-right: 0;
+    /* Remove margin from the last item */
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.logo {
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style the hero section */
+.hero {
+    background-image: url('https://media.discordapp.net/attachments/1158035690819420332/1160231611346985031/ezgif-1-bd33fd59cf.gif?ex=6533e8e4&is=652173e4&hm=eb19c6000ae505cf9526a5e5c91af640ffc943b6f96417f4b48a782b27083ecc&=');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: right;
+    padding: 50px;
+    /* Adjust the padding as needed */
+}
+
+.hero p {
+    color: #FFF;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.heroheader {
+    color: #FFF;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style the features section */
+.features {
+    background-color: #F9F9F9;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    margin-bottom: 40px;
+}
+
+.feature img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #060606;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Responsive styles */
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .navbar nav ul li {
+        margin-right: 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+.teams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.teams-items {
+    /*  border: 1px solid red; */
+    padding: 2rem;
+    background: #060606;
+    color: #fff;
+    text-align: center;
+}
+
+.teams-items img {
+    width: 300px;
+}
+
+.teams-header {
+    margin-bottom: 20px;
+    font-size: 48;
+    font-weight: bold;
+}
+
+.teams-img {
+    margin-bottom: 20px;
+
+}
+
+.teams-p {
+    margin-left: 20px;
+}
+
+.teams-buttom {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+ul {
+    width: 180%;
+    display: flex;
+    height: 80%;
+    /*  border: 1px solid red; */
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    justify-content: flex-end;
+    /* Align the menu to the right */
+}
+
+ul li {
+    margin: 0 1rem;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map-header {
+    text-align: center;
+    font-weight: bold;
+}
+
+.map-container {
+    padding: 30px;
+    background-color: #060606;
+    color: white;
+}
+
+.teams2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+}
+
+.teams-items2 {
+    /*  border: 1px solid red; */
+    padding: 2rem;
+    background: #060606;
+    color: #fff;
+    text-align: center;
+}
+
+.teams-items2 img {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.teams-header2 {
+    margin-bottom: 20px;
+    font-size: 48;
+    font-weight: bold;
+}
+
+.teams-img2 {
+    margin-bottom: 20px;
+
+}
+
+.teams-p2 {
+    margin-left: 20px;
+}
+
+.teams-buttom2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dust-img img {
+    width: 1300px;
+    height: auto;
+    /* Automatically adjust the height to maintain aspect ratio */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dust-text {
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .navbar h1 {
+        font-size: 20px;
+    }
+
+    .navbar nav ul li {
+        margin-right: 10px;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .dust-img img {
+        align-items: center;
+        width: 100%;
+        /* Use the full width of the container */
+        height: auto;
+        /* Automatically adjust the height to maintain aspect ratio */
+        padding-right: 0;
+    }
+
+    .teams2 {
+        grid-template-columns: repeat(2, 1fr);
+        /* Single column on smaller screens */
+        padding-left: 0;
+    }
+
+    .teams-items2 img {
+        width: 100%;
+        /* Use the full width of the container */
+    }
+}
+
+.dust-bg {
+    background-color: #060606;
+}
+
+.dust-container {
+    padding-top: 70px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dust-img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
