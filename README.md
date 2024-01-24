@@ -49,13 +49,43 @@ Explore the [Dust Quantity](DustQuantity.html) section to learn more about the m
 
 Learn about Methane Gas and its impact by visiting the [Methane Gas](MethaneGas.html) section.
 
-## Contributing
+## Explore EMIT Data
 
-If you have suggestions, improvements, or issues, feel free to contribute to this project. Create a pull request or open an issue.
+Visit the [EMIT Data Portal](https://earth.jpl.nasa.gov/emit/data/data-portal/coverage-and-forecasts/) to explore data on methane emissions and dust quantity collected by the EMIT satellite.
+
+## EMIT Website
+
+Visit the [EMIT Website](#) for a detailed interactive experience, including the latest information on the mission, methane gas detection, and more.
+
+## JavaScript Code for Data Fetching
+
+The following JavaScript code is responsible for fetching GeoJSON data from the server and displaying it on the interactive map:
+
+```javascript
+// Create a Leaflet map centered at a specific latitude and longitude
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+// Add a base layer (e.g., OpenStreetMap)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Load GeoJSON data ("Methane Metadata.json") and add it to the map
+fetch('Methane_Metadata.json')
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        L.geoJSON(data).addTo(map);
+    })
+    .catch(function (error) {
+        console.error('Error loading GeoJSON:', error);
+});
+```
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Nasean License](LICENSE).
 
 ---
 
