@@ -85,7 +85,7 @@ fetch('Methane_Metadata.json')
 
 ## License
 
-This project is licensed under the [Nasean License](LICENSE).
+This project is licensed under the [Nasean License](LICENSE.md).
 
 ---
 
